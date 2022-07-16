@@ -1,9 +1,9 @@
 ﻿using NSubstitute;
 using NUnit.Framework;
 
-namespace Aidan.SerialRPC.Tests.Marshalling.RawArgMarshalling.IntArgParserTests;
+namespace Aidan.SerialRPC.Tests.Marshalling.RawArgMarshalling.IntArgMarshallerTests;
 
-public class When_Parsed : Given_An_IntArgParser
+public class When_Parsed : Given_An_IntArgMarshaller
 {
     private int _deanaryIn;
     private byte[] _bytes;
@@ -15,7 +15,7 @@ public class When_Parsed : Given_An_IntArgParser
         _deanaryIn = 5000000;
         _bytes = new byte [ ] { 64, 75, 76 };
         _paddedBytes = new byte [ ] { 64, 240, 75, 240, 76 };
-        MockPaddingInterleaveParser
+        MockPaddingInterleaveMarshaller
             .Parse( Arg.Any<byte [ ]>( ) )
             .Returns( _paddedBytes );
         _result = SUT.Parse( _deanaryIn );
@@ -24,10 +24,10 @@ public class When_Parsed : Given_An_IntArgParser
     [ Test ]
     public void Then_Correct_Bytes_Are_Passed_To_The_Interleaver( )
     {
-        MockPaddingInterleaveParser
+        MockPaddingInterleaveMarshaller
             .Received( 1 )
             .Parse( Arg.Any<byte [ ]>( ) );
-        MockPaddingInterleaveParser
+        MockPaddingInterleaveMarshaller
             .Received( )
             .Parse( Arg.Is<byte [ ]>( b => b.SequenceEqual( _bytes ) ) );
     }

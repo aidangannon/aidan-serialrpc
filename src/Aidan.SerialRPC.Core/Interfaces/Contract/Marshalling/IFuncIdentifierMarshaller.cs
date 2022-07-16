@@ -2,6 +2,6 @@
 
 namespace Aidan.SerialRPC.Core.Interfaces.Contract.Marshalling;
 
-public interface IBoolArgParser : IFuncParser<bool>
+public interface IFuncIdentifierMarshaller : IFuncMarshaller<string>
 {
 }

@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
 
-namespace Aidan.SerialRPC.Tests.Marshalling.RawArgMarshalling.BoolArgParserTests;
+namespace Aidan.SerialRPC.Tests.Marshalling.RawArgMarshalling.BoolArgMarshallerTests;
 
-public class When_Parsed : Given_A_BoolArgParser
+public class When_Parsed : Given_A_BoolArgMarshaller
 {
     [ TestCase( false, new byte [ ] { 0 } ) ]
     [ TestCase( true, new byte [ ] { 1 } ) ]

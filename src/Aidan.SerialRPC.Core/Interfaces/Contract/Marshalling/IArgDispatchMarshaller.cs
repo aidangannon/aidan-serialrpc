@@ -3,8 +3,8 @@
 namespace Aidan.SerialRPC.Core.Interfaces.Contract.Marshalling;
 
 /// <summary>
-/// interleaves bits with padding when arg spans multiple bytes
+/// dispatches to the valid arg marshaller
 /// </summary>
-public interface IPaddingInterleaveParser : IFuncParser<byte[]>
+public interface IArgDispatchMarshaller : IFuncMarshaller<(Type type, object value)>
 {
 }

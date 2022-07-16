@@ -3,6 +3,6 @@
 /// <summary>
 /// wraps the arg parsing inside start and end blocks
 /// </summary>
-public interface IWrappedArgParser : IFuncParser<Func<byte [ ]>>
+public interface IWrappedArgMarshaller : IFuncMarshaller<Func<byte [ ]>>
 {
 }

@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
 
-namespace Aidan.SerialRPC.Tests.Marshalling.RawArgMarshalling.ByteArgParserTests;
+namespace Aidan.SerialRPC.Tests.Marshalling.RawArgMarshalling.ByteArgMarshallerTests;
 
-public class When_Parsed : Given_A_ByteArgParser
+public class When_Parsed : Given_A_ByteArgMarshaller
 {
     [ Test ]
     public void Then_Byte_Input_Gets_Put_Into_An_Array( )
