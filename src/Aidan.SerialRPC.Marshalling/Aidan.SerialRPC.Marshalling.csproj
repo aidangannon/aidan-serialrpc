@@ -6,4 +6,12 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Aidan.SerialRPC.Core\Aidan.SerialRPC.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="WrappedArgMarshalling" />
+    </ItemGroup>
+
 </Project>

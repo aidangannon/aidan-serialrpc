@@ -18,4 +18,8 @@
       <Folder Include="HardwareAbstraction" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\Aidan.SerialRPC.Marshalling\Aidan.SerialRPC.Marshalling.csproj" />
+    </ItemGroup>
+
 </Project>
