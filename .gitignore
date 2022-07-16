@@ -1,0 +1,7 @@
+﻿# BUILD ARTIFCATS
+bin
+obj
+
+# IDE CONFIG
+/.idea
+
