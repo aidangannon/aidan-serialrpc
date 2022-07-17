@@ -12,10 +12,10 @@ public class IntArgMarshaller : IIntArgMarshaller
         _paddingInterleaveMarshaller = paddingInterleaveMarshaller;
     }
 
-    public byte [ ] Parse( int dataIn )
+    public byte [ ] Marshal( int dataIn )
     {
         var bytes = BitConverter.GetBytes( dataIn );
         Array.Resize( ref bytes, Array.FindLastIndex( bytes, b => b != 0 ) + 1 );
-        return _paddingInterleaveMarshaller.Parse( bytes );
+        return _paddingInterleaveMarshaller.Marshal( bytes );
     }
 }

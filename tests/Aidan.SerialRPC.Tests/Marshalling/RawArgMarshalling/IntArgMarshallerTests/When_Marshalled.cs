@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace Aidan.SerialRPC.Tests.Marshalling.RawArgMarshalling.IntArgMarshallerTests;
 
-public class When_Parsed : Given_An_IntArgMarshaller
+public class When_Marshalled : Given_An_IntArgMarshaller
 {
     private int _deanaryIn;
     private byte[] _bytes;
@@ -16,9 +16,9 @@ public class When_Parsed : Given_An_IntArgMarshaller
         _bytes = new byte [ ] { 64, 75, 76 };
         _paddedBytes = new byte [ ] { 64, 240, 75, 240, 76 };
         MockPaddingInterleaveMarshaller
-            .Parse( Arg.Any<byte [ ]>( ) )
+            .Marshal( Arg.Any<byte [ ]>( ) )
             .Returns( _paddedBytes );
-        _result = SUT.Parse( _deanaryIn );
+        _result = SUT.Marshal( _deanaryIn );
     }
 
     [ Test ]
@@ -26,10 +26,10 @@ public class When_Parsed : Given_An_IntArgMarshaller
     {
         MockPaddingInterleaveMarshaller
             .Received( 1 )
-            .Parse( Arg.Any<byte [ ]>( ) );
+            .Marshal( Arg.Any<byte [ ]>( ) );
         MockPaddingInterleaveMarshaller
             .Received( )
-            .Parse( Arg.Is<byte [ ]>( b => b.SequenceEqual( _bytes ) ) );
+            .Marshal( Arg.Is<byte [ ]>( b => b.SequenceEqual( _bytes ) ) );
     }
 
     [ Test ]

@@ -2,5 +2,5 @@
 
 public interface IFuncMarshaller<TIn>
 {
-    byte [ ] Parse( TIn dataIn );
+    byte [ ] Marshal( TIn dataIn );
 }

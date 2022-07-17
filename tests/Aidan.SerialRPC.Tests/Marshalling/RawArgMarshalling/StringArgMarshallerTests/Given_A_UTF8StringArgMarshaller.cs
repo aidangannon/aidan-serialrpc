@@ -9,10 +9,12 @@ namespace Aidan.SerialRPC.Tests.Marshalling.RawArgMarshalling.StringArgMarshalle
 public class Given_A_UTF8StringArgMarshaller : GivenWhenThen<IStringArgMarshaller>
 {
     protected IPaddingInterleaveMarshaller MockPaddingInterleaveMarshaller;
+    protected INullConvertMarshaller MockNullConvertMarshaller;
 
     protected override void Given( )
     {
         MockPaddingInterleaveMarshaller = Substitute.For<IPaddingInterleaveMarshaller>( );
-        SUT = new Utf8StringArgMarshaller( MockPaddingInterleaveMarshaller );
+        MockNullConvertMarshaller = Substitute.For<INullConvertMarshaller>( );
+        SUT = new Utf8StringArgMarshaller( MockPaddingInterleaveMarshaller, MockNullConvertMarshaller );
     }
 }

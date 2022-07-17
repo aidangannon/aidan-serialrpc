@@ -4,5 +4,5 @@ namespace Aidan.SerialRPC.Marshalling.RawArgMarshalling;
 
 public class ByteArgMarshaller : IByteArgMarshaller
 {
-    public byte [ ] Parse( byte dataIn ) { return new [ ] { dataIn }; }
+    public byte [ ] Marshal( byte dataIn ) { return new [ ] { dataIn }; }
 }

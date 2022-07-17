@@ -4,7 +4,7 @@ namespace Aidan.SerialRPC.Marshalling.RawArgMarshalling;
 
 public class BoolArgMarshaller : IBoolArgMarshaller
 {
-    public byte [ ] Parse( bool dataIn )
+    public byte [ ] Marshal( bool dataIn )
     {
         return dataIn switch
         {
