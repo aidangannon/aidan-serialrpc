@@ -5,3 +5,8 @@ namespace Aidan.SerialRPC.Core.Interfaces.Contract.Marshalling.WrappedMarshallin
 public interface IWrappedIntArgMarshaller : IFuncMarshaller<int>
 {
 }
+
+public class TestWrappedIntArgMarshaller : IWrappedIntArgMarshaller
+{
+    public byte [ ] Marshal( int dataIn ) { throw new NotImplementedException( ); }
+}
