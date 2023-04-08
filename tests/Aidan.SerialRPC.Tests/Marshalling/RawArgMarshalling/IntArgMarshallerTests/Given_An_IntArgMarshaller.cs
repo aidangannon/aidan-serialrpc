@@ -6,7 +6,7 @@ using NSubstitute;
 
 namespace Aidan.SerialRPC.Tests.Marshalling.RawArgMarshalling.IntArgMarshallerTests;
 
-public class Given_An_IntArgMarshaller : GivenWhenThen<IIntArgMarshaller>
+public abstract class Given_An_IntArgMarshaller : GivenWhenThen<IIntArgMarshaller>
 {
     protected IPaddingInterleaveMarshaller MockPaddingInterleaveMarshaller;
 

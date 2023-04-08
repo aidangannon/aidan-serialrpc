@@ -1,4 +1,4 @@
-﻿using Aidan.SerialRPC.Core.Interfaces.Excluded;
+﻿using Aidan.SerialRPC.Core.Interfaces.Contract.Marshalling.WrappedMarshalling;
 using AutoFixture;
 using FluentAssertions;
 using NSubstitute;
@@ -9,12 +9,12 @@ namespace Aidan.SerialRPC.Tests.Marshalling.WrappedArgMarshalling.ArgDispatchMar
 public class When_Dispatched_And_Data_Is_An_Int : Given_An_ArgDispatchMarshaller
 {
     private byte[] _result;
-    private IFuncMarshaller<int> _mockIntMarshaller;
+    private IGenericWrappedArgMarshaller<int> _mockIntMarshaller;
     private byte[] _marshalledInt;
 
     protected override void When( )
     {
-        _mockIntMarshaller = Substitute.For<IFuncMarshaller<int>>( );
+        _mockIntMarshaller = Substitute.For<IGenericWrappedArgMarshaller<int>>( );
         _marshalledInt = new Fixture( ).CreateMany<byte>( ).ToArray( );
         MockFuncMarshallerFactory.Create<int>( ).Returns( _mockIntMarshaller );
         _mockIntMarshaller.Marshal( 4 ).Returns( _marshalledInt );

@@ -6,7 +6,7 @@ using NSubstitute;
 
 namespace Aidan.SerialRPC.Tests.Marshalling.WrappedArgMarshalling.NullConvertMarshallerTests;
 
-public class Given_A_NullConvertMarshaller : GivenWhenThen<INullConvertMarshaller>
+public abstract class Given_A_NullConvertMarshaller : GivenWhenThen<INullConvertMarshaller>
 {
     protected IFuncMarshaller<string> MockMarshaller;
 

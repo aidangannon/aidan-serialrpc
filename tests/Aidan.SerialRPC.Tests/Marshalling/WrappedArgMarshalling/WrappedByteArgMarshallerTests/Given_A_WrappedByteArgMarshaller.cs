@@ -7,7 +7,7 @@ using NSubstitute;
 
 namespace Aidan.SerialRPC.Tests.Marshalling.WrappedArgMarshalling.WrappedByteArgMarshallerTests;
 
-public class Given_A_WrappedByteArgMarshaller : GivenWhenThen<IGenericWrappedArgMarshaller<byte>>
+public abstract class Given_A_WrappedByteArgMarshaller : GivenWhenThen<IGenericWrappedArgMarshaller<byte>>
 {
     private IWrappedArgMarshaller _mockWrappedArgMarshaller;
     protected IByteArgMarshaller MockByteArgMarshaller;

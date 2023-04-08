@@ -4,7 +4,7 @@ using Aidan.SerialRPC.Marshalling.WrappedArgMarshalling;
 
 namespace Aidan.SerialRPC.Tests.Marshalling.WrappedArgMarshalling.WrappedArgMarshallerTests;
 
-public class Given_A_WrappedArgMarshaller : GivenWhenThen<IWrappedArgMarshaller>
+public abstract class Given_A_WrappedArgMarshaller : GivenWhenThen<IWrappedArgMarshaller>
 {
     protected override void Given( )
     {

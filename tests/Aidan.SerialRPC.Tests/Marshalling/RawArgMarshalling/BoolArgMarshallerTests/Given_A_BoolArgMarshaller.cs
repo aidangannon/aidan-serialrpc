@@ -4,7 +4,7 @@ using Aidan.SerialRPC.Marshalling.RawArgMarshalling;
 
 namespace Aidan.SerialRPC.Tests.Marshalling.RawArgMarshalling.BoolArgMarshallerTests;
 
-public class Given_A_BoolArgMarshaller : GivenWhenThen<IBoolArgMarshaller>
+public abstract class Given_A_BoolArgMarshaller : GivenWhenThen<IBoolArgMarshaller>
 {
     protected override void Given( )
     {

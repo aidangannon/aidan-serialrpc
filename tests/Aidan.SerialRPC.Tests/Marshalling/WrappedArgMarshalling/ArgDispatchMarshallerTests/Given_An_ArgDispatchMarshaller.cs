@@ -6,7 +6,7 @@ using NSubstitute;
 
 namespace Aidan.SerialRPC.Tests.Marshalling.WrappedArgMarshalling.ArgDispatchMarshallerTests;
 
-public class Given_An_ArgDispatchMarshaller : GivenWhenThen<IArgDispatchMarshaller>
+public abstract class Given_An_ArgDispatchMarshaller : GivenWhenThen<IArgDispatchMarshaller>
 {
     protected IFuncMarshallerFactory MockFuncMarshallerFactory;
 

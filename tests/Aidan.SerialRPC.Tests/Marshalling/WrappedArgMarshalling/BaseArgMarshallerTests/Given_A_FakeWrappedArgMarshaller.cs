@@ -4,7 +4,7 @@ using NSubstitute;
 
 namespace Aidan.SerialRPC.Tests.Marshalling.WrappedArgMarshalling.BaseArgMarshallerTests;
 
-public class Given_A_FakeWrappedArgMarshaller : GivenWhenThen<IFuncMarshaller<object>>
+public abstract class Given_A_FakeWrappedArgMarshaller : GivenWhenThen<IFuncMarshaller<object>>
 {
     protected IFuncMarshaller<object> MockFuncMarshaller;
     protected IWrappedArgMarshaller MockWrappedArgMarshaller;

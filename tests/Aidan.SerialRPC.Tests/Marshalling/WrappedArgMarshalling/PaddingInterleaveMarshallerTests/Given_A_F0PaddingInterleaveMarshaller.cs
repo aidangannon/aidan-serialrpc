@@ -4,7 +4,7 @@ using Aidan.SerialRPC.Marshalling.WrappedArgMarshalling;
 
 namespace Aidan.SerialRPC.Tests.Marshalling.WrappedArgMarshalling.PaddingInterleaveMarshallerTests;
 
-public class Given_A_F0PaddingInterleaveMarshaller : GivenWhenThen<IPaddingInterleaveMarshaller>
+public abstract class Given_A_F0PaddingInterleaveMarshaller : GivenWhenThen<IPaddingInterleaveMarshaller>
 {
     protected override void Given( )
     {
