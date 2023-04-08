@@ -7,7 +7,7 @@ using NSubstitute;
 
 namespace Aidan.SerialRPC.Tests.Marshalling.WrappedArgMarshalling.WrappedBoolArgMarshallerTests;
 
-public class Given_A_WrappedBoolArgMarshaller : GivenWhenThen<IWrappedBoolArgMarshaller>
+public class Given_A_WrappedBoolArgMarshaller : GivenWhenThen<IGenericWrappedArgMarshaller<bool>>
 {
     private IWrappedArgMarshaller _mockWrappedArgMarshaller;
     protected IBoolArgMarshaller MockBoolArgMarshaller;

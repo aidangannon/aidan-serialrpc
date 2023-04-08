@@ -2,6 +2,6 @@
 
 namespace Aidan.SerialRPC.Core.Interfaces.Contract.Marshalling.WrappedMarshalling;
 
-public interface IWrappedBoolArgMarshaller : IFuncMarshaller<bool>
+public interface IGenericWrappedArgMarshaller<T> : IFuncMarshaller<T>
 {
 }

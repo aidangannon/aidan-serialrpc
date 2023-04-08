@@ -4,7 +4,7 @@ using Aidan.SerialRPC.Core.Interfaces.Excluded;
 
 namespace Aidan.SerialRPC.Marshalling.WrappedArgMarshalling;
 
-public class WrappedByteArgMarshaller : BaseWrappedArgMarshaller<byte>, IWrappedByteArgMarshaller
+public class WrappedByteArgMarshaller : BaseWrappedArgMarshaller<byte>, IGenericWrappedArgMarshaller<byte>
 {
     public WrappedByteArgMarshaller( IByteArgMarshaller marshaller,
         IWrappedArgMarshaller wrappedArgMarshaller )
