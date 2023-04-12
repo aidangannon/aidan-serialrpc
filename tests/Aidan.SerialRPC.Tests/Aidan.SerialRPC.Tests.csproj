@@ -11,9 +11,9 @@
         <PackageReference Include="Aidan.Common.Utils" Version="1.0.30" />
         <PackageReference Include="AutoFixture" Version="4.18.0" />
         <PackageReference Include="FluentAssertions" Version="6.10.0" />
-        <PackageReference Include="nunit" Version="3.13.2" />
-        <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+        <PackageReference Include="nunit" Version="3.13.3" />
+        <PackageReference Include="NUnit3TestAdapter" Version="4.4.2" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -21,6 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\src\Aidan.SerialRPC.DynamicProxies\Aidan.SerialRPC.DynamicProxies.csproj" />
       <ProjectReference Include="..\..\src\Aidan.SerialRPC.Marshalling\Aidan.SerialRPC.Marshalling.csproj" />
     </ItemGroup>
 

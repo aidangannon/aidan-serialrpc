@@ -16,7 +16,8 @@ public class SerialRPCModule : NinjectModule
     {
         Kernel.Bind( s => s.FromAssembliesMatching( AssemblyConstants.AidanSerialRPCAssemblies )
             .SelectAllClasses( )
-            .BindDefaultInterface( ) );
+            .BindDefaultInterfaces( )
+            .Configure( x => x.InSingletonScope( ) ) );
     }
     
     private void BindFactories( )
