@@ -14,6 +14,8 @@ public class Given_A_DynamicProxy : GivenWhenThen<ITestInterface>
     [Test]
     public void Test( )
     {
-        SUT.DoSomething( );
+        SUT.OperationOne( 1 );
+        SUT.OperationTwo( 1, "" );
+        var randomVar = SUT.OperationThree( "", "" );
     }
 }

@@ -1,29 +1,37 @@
-﻿using Aidan.SerialRPC.Core.Interfaces.Excluded;
+﻿using Aidan.SerialRPC.DynamicProxies;
 
 namespace Aidan.SerialRPC.Tests.DynamicProxies;
 
 public interface ITestInterface
 {
-    void DoSomething();
-    public void DoSomethingElse( byte byte1, byte byte2 );
+    void OperationOne(int arg1);
+    void OperationTwo(int arg1, string arg2);
+    int OperationThree(string arg1, string arg2);
 }
 
-class TestInterface : ITestInterface
+public class TestInterface : BaseProxy, ITestInterface
 {
-    private readonly IWrappedArgMarshaller _wrappedArgMarshaller;
-
-    public TestInterface( IWrappedArgMarshaller wrappedArgMarshaller )
+    public TestInterface( TestLogger logger ) : base( logger )
     {
-        _wrappedArgMarshaller = wrappedArgMarshaller;
-    }
-    
-    public void DoSomething( )
-    {
-        Console.WriteLine("test");
     }
 
-    public void DoSomethingElse( byte byte1, byte byte2 )
+    public void OperationOne( int arg1 )
     {
-        _wrappedArgMarshaller.Marshal( new [ ] { byte1, byte2 } );
+        AddIntArg( arg1 );
+        PublishShit( );
+    }
+
+    public void OperationTwo( int arg1, string arg2 )
+    {
+        AddIntArg( arg1 );
+        AddStringArg( arg2 );
+        PublishShit( );
+    }
+
+    public int OperationThree( string arg1, string arg2 )
+    {
+        AddStringArg( arg1 );
+        AddStringArg( arg2 );
+        return PublishShit( true );
     }
 }
