@@ -25,7 +25,7 @@ public class When_Dispatched_And_Data_Is_A_String : Given_An_ArgDispatchMarshall
         MockFuncMarshallerFactory
             .Create<string>( )
             .Returns( _wrappedMarshaller );
-        _result = SUT.Marshal( ( typeof( string ), _input ) );
+        _result = SUT.Marshal( _input );
     }
 
     [Test]

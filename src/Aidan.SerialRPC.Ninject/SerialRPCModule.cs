@@ -10,14 +10,14 @@ public class SerialRPCModule : NinjectModule
     {
         BindServices( );
         BindFactories( );
+        
     }
 
     private void BindServices( )
     {
         Kernel.Bind( s => s.FromAssembliesMatching( AssemblyConstants.AidanSerialRPCAssemblies )
             .SelectAllClasses( )
-            .BindDefaultInterfaces( )
-            .Configure( x => x.InSingletonScope( ) ) );
+            .BindAllInterfaces( ) );
     }
     
     private void BindFactories( )

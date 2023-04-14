@@ -2,9 +2,8 @@
 
 public class TestLogger
 {
-    public int Log( string message, bool returnVal = false )
+    public void Log( string message, bool returnVal = false )
     {
         Console.WriteLine(message);
-        return returnVal ? 1 : 0;
     }
 }

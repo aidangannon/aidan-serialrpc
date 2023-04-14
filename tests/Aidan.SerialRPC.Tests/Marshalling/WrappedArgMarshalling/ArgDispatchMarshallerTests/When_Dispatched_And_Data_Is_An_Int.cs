@@ -18,7 +18,7 @@ public class When_Dispatched_And_Data_Is_An_Int : Given_An_ArgDispatchMarshaller
         _marshalledInt = new Fixture( ).CreateMany<byte>( ).ToArray( );
         MockFuncMarshallerFactory.Create<int>( ).Returns( _mockIntMarshaller );
         _mockIntMarshaller.Marshal( 4 ).Returns( _marshalledInt );
-        _result = SUT.Marshal( ( typeof( int ), 4 ) );
+        _result = SUT.Marshal( 4 );
     }
 
     [ Test ]

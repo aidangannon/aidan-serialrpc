@@ -25,7 +25,7 @@ public class When_Dispatched_And_Data_Is_A_Bool : Given_An_ArgDispatchMarshaller
         MockFuncMarshallerFactory
             .Create<bool>( )
             .Returns( _wrappedMarshaller );
-        _result = SUT.Marshal( ( typeof( bool ), _input ) );
+        _result = SUT.Marshal( _input );
     }
 
     [Test]

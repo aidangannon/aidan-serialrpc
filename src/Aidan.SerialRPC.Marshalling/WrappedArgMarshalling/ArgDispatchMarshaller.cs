@@ -13,35 +13,26 @@ public class ArgDispatchMarshaller : IArgDispatchMarshaller
         _funcMarshallerFactory = funcMarshallerFactory;
     }
 
-    public byte [ ] Marshal( (Type type, object value) dataIn )
+    public byte [ ] Marshal<T>( T dataIn )
     {
-        if( dataIn.type == typeof( int ) )
-        {
-            return _funcMarshallerFactory.Create<int>( ).Marshal( ( int )dataIn.value );
-        }
-        if( dataIn.type == typeof( string ) )
-        {
-            return _funcMarshallerFactory.Create<string>( ).Marshal( ( string )dataIn.value );
-        }
-        if( dataIn.type == typeof( byte ) )
-        {
-            return _funcMarshallerFactory.Create<byte>( ).Marshal( ( byte )dataIn.value );
-        }
-        if( dataIn.type == typeof( bool ) )
-        {
-            return _funcMarshallerFactory.Create<bool>( ).Marshal( ( bool )dataIn.value );
-        }
-
-        throw new TypeNotSupportedException( dataIn.type );
-    }
-
-    private Func<byte [ ]>? MarshalType( Type type, object dataIn )
-    {
+        var type = typeof( T );
         if( type == typeof( int ) )
         {
-            return () => _funcMarshallerFactory.Create<int>( ).Marshal( ( int )dataIn );
+            return _funcMarshallerFactory.Create<T>( ).Marshal( dataIn );
+        }
+        if( type == typeof( string ) )
+        {
+            return _funcMarshallerFactory.Create<T>( ).Marshal( dataIn );
+        }
+        if( type == typeof( byte ) )
+        {
+            return _funcMarshallerFactory.Create<T>( ).Marshal( dataIn );
+        }
+        if( type == typeof( bool ) )
+        {
+            return _funcMarshallerFactory.Create<T>( ).Marshal( dataIn );
         }
 
-        return null;
+        throw new TypeNotSupportedException( type );
     }
 }

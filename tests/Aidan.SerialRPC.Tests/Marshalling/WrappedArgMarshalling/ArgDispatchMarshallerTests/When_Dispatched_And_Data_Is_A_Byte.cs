@@ -25,7 +25,7 @@ public class When_Dispatched_And_Data_Is_A_Byte : Given_An_ArgDispatchMarshaller
         MockFuncMarshallerFactory
             .Create<byte>( )
             .Returns( _wrappedMarshaller );
-        _result = SUT.Marshal( ( typeof( byte ), _input ) );
+        _result = SUT.Marshal( _input );
     }
 
     [Test]
