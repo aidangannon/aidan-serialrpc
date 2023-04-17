@@ -21,6 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\src\Aidan.SerialRPC.Common\Aidan.SerialRPC.Common.csproj" />
       <ProjectReference Include="..\..\src\Aidan.SerialRPC.DynamicProxies\Aidan.SerialRPC.DynamicProxies.csproj" />
       <ProjectReference Include="..\..\src\Aidan.SerialRPC.Marshalling\Aidan.SerialRPC.Marshalling.csproj" />
       <ProjectReference Include="..\..\src\Aidan.SerialRPC.Ninject\Aidan.SerialRPC.Ninject.csproj" />

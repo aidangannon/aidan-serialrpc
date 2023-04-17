@@ -1,5 +1,6 @@
 ﻿using Aidan.SerialRPC.Core.Exceptions;
 using Aidan.SerialRPC.Core.Interfaces.Contract;
+using Aidan.SerialRPC.Core.Interfaces.Contract.Common;
 using Aidan.SerialRPC.Core.Interfaces.Contract.Marshalling;
 
 namespace Aidan.SerialRPC.Marshalling.WrappedArgMarshalling;
@@ -7,32 +8,28 @@ namespace Aidan.SerialRPC.Marshalling.WrappedArgMarshalling;
 public class ArgDispatchMarshaller : IArgDispatchMarshaller
 {
     private readonly IFuncMarshallerFactory _funcMarshallerFactory;
+    private readonly IIocServiceResolverWrapper _iocServiceResolverWrapper;
 
-    public ArgDispatchMarshaller( IFuncMarshallerFactory funcMarshallerFactory )
+    public ArgDispatchMarshaller( IFuncMarshallerFactory funcMarshallerFactory,
+        IIocServiceResolverWrapper iocServiceResolverWrapper )
     {
         _funcMarshallerFactory = funcMarshallerFactory;
+        _iocServiceResolverWrapper = iocServiceResolverWrapper;
     }
 
     public byte [ ] Marshal<T>( T dataIn )
     {
         var type = typeof( T );
-        if( type == typeof( int ) )
+        try
         {
-            return _funcMarshallerFactory.Create<T>( ).Marshal( dataIn );
+            var wrappedArgMarshaller = _iocServiceResolverWrapper
+                .Wrap( ( ) => _funcMarshallerFactory
+                    .Create<T>( ) );
+            return wrappedArgMarshaller.Marshal( dataIn );
         }
-        if( type == typeof( string ) )
+        catch( ServiceNotFoundException )
         {
-            return _funcMarshallerFactory.Create<T>( ).Marshal( dataIn );
+            throw new TypeNotSupportedException( type );
         }
-        if( type == typeof( byte ) )
-        {
-            return _funcMarshallerFactory.Create<T>( ).Marshal( dataIn );
-        }
-        if( type == typeof( bool ) )
-        {
-            return _funcMarshallerFactory.Create<T>( ).Marshal( dataIn );
-        }
-
-        throw new TypeNotSupportedException( type );
     }
 }
