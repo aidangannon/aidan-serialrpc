@@ -1,4 +1,4 @@
-﻿namespace Aidan.SerialRPC.Core.Interfaces.Contract.HardwareAbstraction;
+﻿namespace Aidan.SerialRPC.Core.Interfaces.Contract.HardwareAbstraction.SerialCommunication;
 
 public interface ILibCService
 {

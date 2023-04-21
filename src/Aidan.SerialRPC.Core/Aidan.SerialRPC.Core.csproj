@@ -10,4 +10,8 @@
       <PackageReference Include="Aidan.Common.Core" Version="1.0.32" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Interfaces\Contract\Unmarshalling" />
+    </ItemGroup>
+
 </Project>

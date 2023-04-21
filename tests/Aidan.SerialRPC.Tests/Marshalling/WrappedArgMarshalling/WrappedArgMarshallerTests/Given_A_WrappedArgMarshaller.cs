@@ -1,5 +1,5 @@
 ﻿using Aidan.Common.Utils.Test;
-using Aidan.SerialRPC.Core.Interfaces.Excluded;
+using Aidan.SerialRPC.Core.Interfaces.Excluded.Marshalling;
 using Aidan.SerialRPC.Marshalling.WrappedArgMarshalling;
 
 namespace Aidan.SerialRPC.Tests.Marshalling.WrappedArgMarshalling.WrappedArgMarshallerTests;

@@ -1,4 +1,4 @@
-﻿namespace Aidan.SerialRPC.Core.Interfaces.Excluded;
+﻿namespace Aidan.SerialRPC.Core.Interfaces.Excluded.Marshalling;
 
 /// <summary>
 /// wraps the arg parsing inside start and end blocks

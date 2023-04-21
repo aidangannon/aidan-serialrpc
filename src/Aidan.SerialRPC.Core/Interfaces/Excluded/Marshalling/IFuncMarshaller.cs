@@ -1,4 +1,4 @@
-﻿namespace Aidan.SerialRPC.Core.Interfaces.Excluded;
+﻿namespace Aidan.SerialRPC.Core.Interfaces.Excluded.Marshalling;
 
 public interface IFuncMarshaller<TIn>
 {

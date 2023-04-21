@@ -1,6 +1,6 @@
 ﻿using Aidan.Common.Utils.Test;
 using Aidan.SerialRPC.Core.Interfaces.Contract.Marshalling.WrappedMarshalling;
-using Aidan.SerialRPC.Core.Interfaces.Excluded;
+using Aidan.SerialRPC.Core.Interfaces.Excluded.Marshalling;
 using Aidan.SerialRPC.Marshalling.WrappedArgMarshalling;
 using NSubstitute;
 

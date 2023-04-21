@@ -1,4 +1,4 @@
-﻿using Aidan.SerialRPC.Core.Interfaces.Excluded;
+﻿using Aidan.SerialRPC.Core.Interfaces.Excluded.Marshalling;
 
 namespace Aidan.SerialRPC.Marshalling.WrappedArgMarshalling;
 
